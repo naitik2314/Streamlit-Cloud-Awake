@@ -45,4 +45,68 @@ This Python-based project leverages the **Selenium WebDriver** to visit a websit
 3. Download Broswer Webdriver
    For Google Chrome: [ChromeDriver](https://developer.chrome.com/docs/chromedriver/downloads)
    Ensure the driver version matches your browser version.
+
+---
+
+## 📜 Usage
+
+### Configuration
+- 🔗 **Set the Website URL**: Update the `URL` variable in the script to the website you want to visit.
+- 📂 **Driver Path**: Update the `executable_path` in the script with the path to your browser driver.
+
+### Run the Script
+1. Execute the script:
+   ```bash
+   python main.py
    
+2. The script will:
+- Visit the specified website.
+- Wait for the page to load.
+- Randomly select a visible text element, scroll to it, highlight it, and simulate interaction.
+- Wait for a random interval (6–24 hours) before revisiting the website.
+
+---
+
+## 📂 Project Structure
+
+```plaintext
+random-text-selector/
+│
+├── main.py  # Main script
+├── README.md                # Project documentation
+└── requirements.txt         # Dependencies
+```
+---
+
+## 🖥️ Demo
+
+### 🎨 **Random Text Highlighting**:
+![Highlighting Example](https://your-link-to-demo-image.com/highlight.png)
+
+### 📊 **Console Output**:
+```plaintext
+Navigating to https://example.com...
+Found 50 text elements.
+Found 30 visible text elements.
+Highlighted text: "Welcome to Example!"
+Hovered over the random text element.
+Waiting for 8 hours and 15 minutes before the next visit...
+```
+---
+
+## 📖 How It Works
+
+1. **Random Text Selection**:
+   - Locates all text elements on the webpage using the XPath `//*[text()]`.
+   - Filters out non-visible elements to ensure interactions are valid.
+   - Randomly selects one of the visible text elements for interaction.
+
+2. **Human-like Interaction**:
+   - Scrolls the selected text element into view.
+   - Highlights the element with a red border (`2px solid red`).
+   - Simulates a hover action using Selenium's `ActionChains`.
+
+3. **Revisit Logic**:
+   - Revisits the website at a random interval (6–24 hours).
+   - Repeats the random text selection and interaction process.
+  
