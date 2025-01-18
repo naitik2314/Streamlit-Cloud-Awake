@@ -62,10 +62,29 @@ def visit_and_select_text(driver, url):
     except Exception as e:
         print(f"Error while visiting {url}: {e}")
 
+def revisit_website(driver, url):
+    """
+    Revisit the website at random intervals and perform random text selection.
+    """
+    try:
+        while True:
+            # Visit and select text
+            visit_and_select_text(driver, url)
+
+            # Wait for a random interval between 6 and 24 hours
+            wait_time = random.randint(6 * 3600, 24 * 3600)  # Convert hours to seconds
+            print(f"Waiting for {wait_time // 3600} hours and {wait_time % 3600 // 60} minutes before the next visit...")
+            time.sleep(wait_time)
+
+    except KeyboardInterrupt:
+        print("Revisiting stopped by user.")
+    except Exception as e:
+        print(f"Error during revisiting: {e}")
+
 if __name__ == "__main__":
     try:
-        # Visit and perform random text selection on the specified URL
-        visit_and_select_text(driver, URL)
+        # Start revisiting the website
+        revisit_website(driver, URL)
     except Exception as e:
         print(f"Error during script execution: {e}")
     finally:
