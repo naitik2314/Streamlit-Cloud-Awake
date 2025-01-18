@@ -26,5 +26,23 @@ This Python-based project leverages the **Selenium WebDriver** to visit a websit
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/random-text-selector.git
-   cd random-text-selector
+   git clone https://github.com/naitik2314/Streamlit-Cloud-Awake.git
+   cd Streamlit-Cloud-Awake
+
+2. **Set up Python Environment**: Create and Activate a virtual environment:
+   Either using Conda or Python venv
+   ```bash
+   # Conda
+   conda create --name environmentname python=3.10.16
+   conda activate environmentname
+   conda install selenium==4.27.1
+               OR
+   # Python venv
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install selenium==4.27.1
+
+3. Download Broswer Webdriver
+   For Google Chrome: [ChromeDriver](https://developer.chrome.com/docs/chromedriver/downloads)
+   Ensure the driver version matches your browser version.
+   
