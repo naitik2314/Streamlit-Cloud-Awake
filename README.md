@@ -81,7 +81,6 @@ random-text-selector/
 ## 🖥️ Demo
 
 ### 🎨 **Random Text Highlighting**:
-![Highlighting Example](https://your-link-to-demo-image.com/highlight.png)
 
 ### 📊 **Console Output**:
 ```plaintext
