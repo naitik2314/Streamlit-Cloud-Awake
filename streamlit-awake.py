@@ -12,21 +12,25 @@ URL = "https://example.com"  # Replace with the desired website
 
 def perform_random_text_selection(driver):
     """
-    Randomly select and highlight text on the webpage.
+    Randomly select and highlight visible text on the webpage.
     """
     try:
         # Find all elements containing text
         text_elements = driver.find_elements(By.XPATH, "//*[text()]")
         print(f"Found {len(text_elements)} text elements.")
 
-        if not text_elements:
-            print("No text elements found on the page.")
+        # Filter visible elements
+        visible_text_elements = [elem for elem in text_elements if elem.is_displayed()]
+        print(f"Found {len(visible_text_elements)} visible text elements.")
+
+        if not visible_text_elements:
+            print("No visible text elements found on the page.")
             return
 
-        # Randomly choose a text element
-        random_element = random.choice(text_elements)
+        # Randomly choose a visible text element
+        random_element = random.choice(visible_text_elements)
 
-        # Scroll to the random element (if needed)
+        # Scroll to the random element
         driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", random_element)
 
         # Highlight the selected element
