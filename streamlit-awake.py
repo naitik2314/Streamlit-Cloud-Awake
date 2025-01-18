@@ -1,55 +1,69 @@
 import time
+import random
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
-import random
 
 # Initialize Selenium WebDriver
-driver = webdriver.Chrome(executable_path="/path/to/your/selenium/driver")  # Update path to your WebDriver
+driver = webdriver.Chrome(executable_path="/path/to/your/selenium/driver")  # Update this path
 
-# Streamlit app URL
-STREAMLIT_APP_URL = "https://<your-streamlit-app-url>.streamlit.app/"  # Replace with your app's URL
+# Website URL to visit
+URL = "https://example.com"  # Replace with the desired website
 
-def wake_up_streamlit_app(driver):
+def perform_random_text_selection(driver):
     """
-    Visits the Streamlit app, waits for it to load, clicks the wake-up button,
-    and performs random scrolling.
+    Randomly select and highlight text on the webpage.
     """
-    # Navigate to the Streamlit app
-    driver.get(STREAMLIT_APP_URL)
-    print("Navigating to the Streamlit app...")
-
-    # Wait for the page to load completely
-    time.sleep(10)
-
-    # Locate and click the "Wake Up" button
     try:
-        wake_up_button = driver.find_element(By.XPATH, "//button[contains(text(), 'get the app back up and running')]")
-        wake_up_button.click()
-        print("Clicked the 'Wake Up' button.")
+        # Find all elements containing text
+        text_elements = driver.find_elements(By.XPATH, "//*[text()]")
+        print(f"Found {len(text_elements)} text elements.")
+
+        if not text_elements:
+            print("No text elements found on the page.")
+            return
+
+        # Randomly choose a text element
+        random_element = random.choice(text_elements)
+
+        # Scroll to the random element (if needed)
+        driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", random_element)
+
+        # Highlight the selected element
+        driver.execute_script("arguments[0].style.border='2px solid red';", random_element)
+        print(f"Highlighted text: {random_element.text.strip()}")
+
+        # Simulate hovering or clicking
+        action = ActionChains(driver)
+        action.move_to_element(random_element).perform()
+        print("Hovered over the random text element.")
+
     except Exception as e:
-        print(f"Error locating or clicking the 'Wake Up' button: {e}")
+        print(f"Error during random text selection: {e}")
 
-    # Perform random scrolling
-    print("Performing random scrolling...")
-    for _ in range(5):  # Scroll multiple times
-        scroll_amount = random.randint(300, 800)
-        driver.execute_script(f"window.scrollBy(0, {scroll_amount});")
-        time.sleep(random.uniform(1, 2))
+def visit_and_select_text(driver, url):
+    """
+    Visit a website, wait for it to load, and perform random text selection.
+    """
+    try:
+        # Open the website
+        driver.get(url)
+        print(f"Navigating to {url}...")
+        
+        # Wait for the website to load completely
+        time.sleep(10)
 
-def main():
-    """
-    Main function to run the wake-up task on a 24-hour loop.
-    """
-    while True:
-        try:
-            # Call the wake-up function
-            wake_up_streamlit_app(driver)
-        except Exception as e:
-            print(f"An error occurred: {e}")
-        finally:
-            print("Task completed. Waiting for 24 hours before the next run...")
-            time.sleep(86400)  # Wait for 24 hours before the next iteration
+        # Perform random text selection
+        perform_random_text_selection(driver)
+    except Exception as e:
+        print(f"Error while visiting {url}: {e}")
 
 if __name__ == "__main__":
-    main()
+    try:
+        # Visit and perform random text selection on the specified URL
+        visit_and_select_text(driver, URL)
+    except Exception as e:
+        print(f"Error during script execution: {e}")
+    finally:
+        # Close the browser
+        driver.quit()
