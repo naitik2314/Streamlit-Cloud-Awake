@@ -1,4 +1,4 @@
-# 🌐 Random Text Selector with Selenium
+# 🌐 STREAMLIT CLOUD DEPLOYED WEBSITE AWAKE BOT
 
 This Python-based project leverages the **Selenium WebDriver** to visit a website, perform random text selection, and revisit the website at random intervals between **6 to 24 hours**. The script highlights randomly selected visible text on the page and mimics human-like behavior by scrolling and interacting with the page.
 
