@@ -57,7 +57,7 @@ This Python-based project leverages the **Selenium WebDriver** to visit a websit
 ### Run the Script
 1. Execute the script:
    ```bash
-   python main.py
+   python3 streamlit-awake.py
    
 2. The script will:
 - Visit the specified website.
@@ -72,9 +72,8 @@ This Python-based project leverages the **Selenium WebDriver** to visit a websit
 ```plaintext
 random-text-selector/
 │
-├── main.py  # Main script
+├── streamlit-awake.py  # main script
 ├── README.md                # Project documentation
-└── requirements.txt         # Dependencies
 ```
 ---
 
