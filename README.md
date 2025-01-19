@@ -6,7 +6,7 @@ This Python-based project leverages the **Selenium WebDriver** to visit a websit
 
 ## 🚀 Features
 
-- 🎯 **Random Text Selection**: Dynamically locates and highlights random visible text elements on the page.
+- 🎯 **Random Text Selection**: Dynamically locates and highlights random visible text elements on the page., to give the impression of active users
 - ⏲️ **Custom Intervals**: Re-visits the website at random intervals ranging from 6 to 24 hours.
 - 🖱️ **Realistic Interactions**: Mimics human interaction by scrolling to text elements and simulating mouse hover actions.
 - 🔧 **Robust and Flexible**: Handles hidden elements gracefully and works across any website with visible text.
@@ -80,7 +80,7 @@ random-text-selector/
 
 ## 🖥️ Demo
 
-### 🎨 **Random Text Highlighting**:
+### 🎨 **Active User Stimulation**:
 
 ### 📊 **Console Output**:
 ```plaintext
