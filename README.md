@@ -76,7 +76,7 @@ random-text-selector/
 │
 ├── streamlit-awake.py       # Main script
 ├── README.md                # Project documentation
-└── requirements.txt         # Dependencies
+└── LICENSE                  # Licence
 ```
 
 ---
