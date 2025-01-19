@@ -74,10 +74,10 @@ This Python-based project leverages the **Selenium WebDriver** to visit a websit
 ```plaintext
 random-text-selector/
 │
-├── streamlit-awake.py  # main script
+├── streamlit-awake.py       # Main script
 ├── README.md                # Project documentation
+└── requirements.txt         # Dependencies
 ```
----
 
 ## 🖥️ Demo
 
