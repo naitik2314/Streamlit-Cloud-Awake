@@ -79,6 +79,8 @@ random-text-selector/
 └── requirements.txt         # Dependencies
 ```
 
+---
+
 ## 🖥️ Demo
 
 ### 🎨 **Active User Stimulation**:
