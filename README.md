@@ -133,6 +133,12 @@ Feel free to reach out for suggestions or contributions!
 
 ---
 
+## 📜 License
+
+This project is licensed under the **MIT License**. See the `LICENSE` file for details.
+
+---
+
 ## 🌟 Contributions
 
 Contributions are welcome! Fork this repository, create a feature branch, and submit a pull request.
