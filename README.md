@@ -108,4 +108,31 @@ Waiting for 8 hours and 15 minutes before the next visit...
 3. **Revisit Logic**:
    - Revisits the website at a random interval (6–24 hours).
    - Repeats the random text selection and interaction process.
-  
+
+---
+
+## ⚙️ Customization
+
+1. **Change Interval**:
+   Modify the interval in seconds for revisiting:
+   ```python
+   wait_time = random.randint(6 * 3600, 24 * 3600)  # 6 to 24 hours
+   ```
+2. Target Specific Tags: To restrict the selection to specific HTML tags like <p> or <span>:
+   ```python
+   text_elements = driver.find_elements(By.XPATH, "//p | //span")
+
+---
+
+## 📧 Contact
+
+Feel free to reach out for suggestions or contributions!  
+**Email**: naitik@wayne.edu  
+**GitHub**: [naitik2314](https://github.com/naitik2314)
+
+---
+
+## 🌟 Contributions
+
+Contributions are welcome! Fork this repository, create a feature branch, and submit a pull request.
+
