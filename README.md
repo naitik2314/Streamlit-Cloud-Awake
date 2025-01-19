@@ -36,7 +36,9 @@ This Python-based project leverages the **Selenium WebDriver** to visit a websit
    conda create --name environmentname python=3.10.16
    conda activate environmentname
    conda install selenium==4.27.1
+   
                OR
+
    # Python venv
    python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
